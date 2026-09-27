@@ -18,9 +18,15 @@ This replaces the usual agentic dashboard of panels on a dark canvas. That versi
 
 Moving between them morphs rather than zooms. Every node is a shared element, so the ball releases into a flat layout over about half a second and regroups faster than it released. Zooming would say "closer". Morphing says "the same material, organised differently", which is the actual claim.
 
+![Pressing the ball releases it into Explorer: the cage folds away, the nodes spread into a force layout, and the Sentinel unfolds at the centre](media/cockpit-release.gif)
+
+![Explorer's four layouts of the same nodes: Force, Circle, Hex and Rings](media/explorer-layouts.png)
+
 ## Motion: noise, never a loop
 
 The field is driven by value noise, not summed sines. A sum of sines is still periodic, and the eye learns it.
+
+![Forty seconds of the value noise Cockpit uses, beside the same span of summed sines with its period marked](media/motion.png)
 
 - **Swim.** Each particle wanders in X, Y and Z on three noise streams at its own tempo, so the volume is never still and never moves as one body.
 - **Tumble.** Three independent signed noise streams turn the volume on all three axes, each able to stall and reverse. A single-axis constant spin is explicitly wrong.
@@ -41,6 +47,10 @@ The shell is achromatic: true black ground, warm off-white ink, matte plates. Co
 
 Colour never carries state. Fill means open or needing attention, an outline means settled, and failure reads as a broken or dashed form. Nothing requires colour vision to operate. A "wants you" signal arrives once and holds; it never pulses.
 
+![The five states, each read by glyph form and label before tone: Running, Done, Failed, Wants you and Idle](media/states.png)
+
+![Shell tokens: ground, page, plate, plate edge, tick, ink, dim ink, idle ink and rule](media/shell-tokens.png)
+
 ## Instrument plates
 
 Plates are not glass. Glass, with its gradient body, specular rim and soft shadow, was built and discarded.
@@ -50,12 +60,24 @@ Plates are not glass. Glass, with its gradient body, specular rim and soft shado
 - One small corner tick opposite the plate's anchor edge, and a mono uppercase header over a hairline rule.
 - Plates are movable, and their positions persist.
 
+![Three instrument plates with chamfered corners and corner ticks: Wants you, Gather and Empty](media/plates.png)
+
+The controller follows the same rule. It is achromatic, so an active control is a full white-on-black inversion rather than an accent hue, and every control moves real nodes.
+
+![Controls: a segmented layout switch, a slider, a checkbox and buttons, with the active state shown as an inversion](media/controls.png)
+
+Icons are one authored SVG family on a 14px grid at a 1.4 stroke, angular with the same cut corners as the plates. There is no icon library.
+
+![The Fragment icon family](media/icons.png)
+
 ## Type
 
 | Role | Face |
 |---|---|
 | Wordmark, headings, UI | Anybody, a variable width face, set wide for display |
 | Data, paths, counts, durations | Cascadia Mono |
+
+![Type specimen: the wide COCKPIT wordmark, a display line and UI text in Anybody, and tabular data in Cascadia Mono](media/type.png)
 
 Cascadia is a product decision, not flavour: the embedded terminals render in it, so widget data and terminal output speak in one voice. Both faces are self-hosted, because the app opens offline.
 
